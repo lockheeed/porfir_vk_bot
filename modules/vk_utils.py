@@ -79,7 +79,7 @@ class VkBot(object):
         else:
             return None
 
-    def make_response(self, event):
+    def messages_handler(self, event):
         log(current_time() + "[ + ] Новое сообщение от: " + str(event.peer_id))
 
         message = event.message

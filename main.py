@@ -21,7 +21,7 @@ banner = f"""
 def handler(event, bot, ai):
     bulling_list = get_bulling_list()
     if event.type == VkEventType.MESSAGE_NEW and event.to_me and not event.from_chat and event.peer_id in bulling_list:
-        bot.make_response(event)
+        bot.messages_handler(event)
 
 
 if __name__ == '__main__':
