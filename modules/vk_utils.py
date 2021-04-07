@@ -175,8 +175,8 @@ class VkBot(object):
             time.sleep(random.uniform(0.5, 1.7))
             self.bot.messages.setActivity(peer_id=peer_id, type="typing")
         except Exception as e:
-            if depth >= 3:
-                log("[ - ] Ошибка при попытке прочитать сообщения! " + str(e))
+            if depth >= 2:
+                log(current_time() + "[ - ] Ошибка при попытке прочитать сообщения! " + str(e))
                 return False
             self.auth()
             self.make_activity(peer_id, depth=depth+1)

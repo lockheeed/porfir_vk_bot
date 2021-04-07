@@ -22,7 +22,7 @@ class Porfirevich(object):
                 random.shuffle(replies)
 
                 for replie in replies:
-                    normalized_replie = replie[1:].split("q:")[0]
+                    normalized_replie = replie[1:].split("q:")[0].split("–")[0]
                     if self.validate_replie(normalized_replie[1:], context_has_latin):
                         if normalized_replie[-1] == ".":
                             return normalized_replie[:-1]
